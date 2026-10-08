@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f8f7" />
+    <title>Voice Desk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="wordmark" href="/" aria-label="Voice Desk home">
+          <span class="wordmark-symbol" aria-hidden="true">V</span>
+          <span>VOICE DESK</span>
+        </a>
+        <div class="connection-state" id="connectionState" role="status" aria-live="polite">
+          <span class="state-light" aria-hidden="true"></span>
+          <span id="statusText">Offline</span>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section class="intro" aria-labelledby="pageTitle">
+          <p class="eyebrow"><span></span> PERSONAL VOICE AGENT</p>
+          <h1 id="pageTitle">A conversation,<br /><em>at your pace.</em></h1>
+        </section>
+
+        <section class="console" aria-label="Voice conversation controls">
+          <div class="console-head">
+            <div>
+              <p class="eyebrow console-label">LIVE SESSION</p>
+              <p class="session-copy" id="sessionText">Ready</p>
+            </div>
+            <span class="session-clock" id="sessionClock">00:00</span>
+          </div>
+
+          <div class="voice-stage" id="voiceStage" data-state="idle">
+            <div class="stage-lines" aria-hidden="true"></div>
+            <div class="waveform" id="waveform" aria-hidden="true"></div>
+            <p class="stage-caption" id="stageCaption">VOICE CHANNEL IDLE</p>
+          </div>
+
+          <div class="control-row">
+            <button class="button button-primary" id="connectButton" type="button">
+              Start conversation
+            </button>
+            <button class="button button-secondary" id="muteButton" type="button" disabled>
+              Mute microphone
+            </button>
+            <button class="button button-end" id="disconnectButton" type="button" disabled>
+              End
+            </button>
+          </div>
+
+          <div class="audio-status">
+            <div class="audio-status-item">
+              <span class="audio-indicator" id="micIndicator"></span>
+              <span>MICROPHONE</span>
+              <strong id="micText">OFF</strong>
+            </div>
+            <div class="audio-status-item">
+              <span class="audio-indicator output-indicator" id="outputIndicator"></span>
+              <span>VOICE OUTPUT</span>
+              <strong id="outputText">READY</strong>
+            </div>
+          </div>
+
+          <div class="conversation-panel">
+            <div class="conversation-heading">
+              <span>TRANSCRIPT</span>
+              <span id="messageCount">0 messages</span>
+            </div>
+            <div class="messages" id="messages" aria-live="polite">
+              <p class="empty-messages">No messages yet</p>
+            </div>
+            <form class="message-form" id="messageForm">
+              <label class="visually-hidden" for="messageInput">Message</label>
+              <input
+                class="message-input"
+                id="messageInput"
+                type="text"
+                placeholder="Type a message"
+                autocomplete="off"
+                disabled
+              />
+              <button class="message-send" id="sendButton" type="submit" disabled>
+                Send
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <footer class="footer-line">
+          <span>LOCAL BROWSER SESSION</span>
+          <span id="roomLabel">No room connected</span>
+        </footer>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

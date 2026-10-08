@@ -1,0 +1,8 @@
+fastapi
+google-adk
+google-generativeai
+livekit-api
+livekit-agents==1.5.17
+livekit-plugins-ai-coustics==0.3.2
+python-dotenv
+uvicorn

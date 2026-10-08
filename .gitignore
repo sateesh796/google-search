@@ -1,0 +1,7 @@
+.env
+google search api key.txt
+.venv/
+__pycache__/
+*.py[cod]
+web/node_modules/
+web/dist/
