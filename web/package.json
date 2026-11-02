@@ -10,6 +10,6 @@
     "livekit-client": "^2.22.3"
   },
   "devDependencies": {
-    "vite": "^7.0.0"
+    "vite": "^7.3.7"
   }
 }
